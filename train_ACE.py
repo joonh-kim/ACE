@@ -115,7 +115,6 @@ def main():
     # segmentation model
     model = Deeplab(args=args)
     saved_state_dict = torch.load(RESTORE_FROM_DEEPLAB)
-    model.load_state_dict(saved_state_dict)
     new_params = model.state_dict().copy()
     for i in saved_state_dict:
         # layer5.conv2d_list.3.weight
