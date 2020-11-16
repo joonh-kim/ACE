@@ -131,3 +131,4 @@ dmypy.json
 # Customized
 snapshots/
 .idea/
+results/

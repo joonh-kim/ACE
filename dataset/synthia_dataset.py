@@ -50,7 +50,8 @@ class SYNTHIADataSet(data.Dataset):
 
         # resize
         image = image.resize(self.crop_size, Image.BICUBIC)
-        label = cv2.resize(label, self.crop_size, interpolation=cv2.INTER_NEAREST)
+        # label = cv2.resize(label, self.crop_size, interpolation=cv2.INTER_NEAREST)
+        label = cv2.resize(label, (1024, 512), interpolation=cv2.INTER_NEAREST)
 
         image = np.asarray(image, np.float32)
         label = np.asarray(label, np.float32)

@@ -176,7 +176,8 @@ class ResNet(nn.Module):
         x2 = self.layer4(x)
         x2 = self.layer6(x2)
 
-        x2 = nn.Upsample(size=(input_size[1], input_size[0]), mode='bilinear', align_corners=True)(x2)
+        # x2 = nn.Upsample(size=(input_size[1], input_size[0]), mode='bilinear', align_corners=True)(x2)
+        x2 = nn.Upsample(size=(512, 1024), mode='bilinear', align_corners=True)(x2)
 
         return x2
 
